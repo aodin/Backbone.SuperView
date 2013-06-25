@@ -1,18 +1,25 @@
 (function() {
-  var SuperView = function(models, options) {
-    // TODO call with arguments?
+  var SuperView = function(options) {
+    this.preInitialize(options);
     Backbone.View.call(this, options);
-    this.superInitialize(options);
+    this.postInitialize(options);
   };
 
   SuperView.extend = Backbone.View.extend;
 
   _.extend(SuperView.prototype, Backbone.View.prototype, {
-    superInitialize: function(options) {
-      console.log('I perform more initialization here!');
+    // Pre-initialize is able to modify given options before they are passed
+    // to the default View constructor
+    preInitialize: function(options) {
+      console.log('Pre-initialization function');
+    },
+    // Post-initialization runs after the default constructor, including the
+    // _configure, _ensureElements and delegateEvents functions
+    postInitialize: function(options) {
+      console.log('Post-initialization function!');
     }
   });
 
-  window.SuperView = SuperView;
+  this.SuperView = SuperView;
 
-})(window);
+}).call(this);

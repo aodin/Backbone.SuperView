@@ -6,30 +6,25 @@
   <link rel="stylesheet" type="text/css" href="./lib/bootstrap.min.css">
 </head>
 <body>
-  <div id="main" style="margin-top:25px;margin-left:25px"></div>
+  <div id="main"></div>
   <script src="./lib/jquery-1.9.1.min.js"></script>
   <script src="./lib/underscore-1.4.4.min.js"></script>
   <script src="./lib/backbone-0.9.10.min.js"></script>
   <script src="./backbone.superview.js"></script>
   <script type="text/javascript">
 $(function() {
-
-
   var ExtendedSuperView = SuperView.extend({
     el: "#main",
     initialize: function(options) {
-      console.log('regular initialize');
+      console.log('Default initialization');
       this.render();
     },
     render: function() {
-      this.$el.html('I am a super view');
+      this.$el.html('<p style="margin:25px 0 0 25px">I am a super view</p>');
       return this;
     },
   });
-
   new ExtendedSuperView();
-
-
 });
   </script>
 </body>
