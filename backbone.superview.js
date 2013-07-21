@@ -1,3 +1,4 @@
+// The isolated boilerplate for a Backbone.js SuperView
 (function() {
   var SuperView = function(options) {
     this.preInitialize(options);

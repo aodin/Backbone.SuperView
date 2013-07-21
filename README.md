@@ -69,6 +69,6 @@ var extend = new Extended();
 
 This project shows another solution. With a small amount of boilerplate, a component can have custom initialization behavior without overwriting the `initialize` function and while still inheriting the constructor function from its parent object.
 
-See the file `backbone.superview.js` for the underlying code and a running example in `example.html`.
+See the file `backbone.superview.js` for the isolated boilerplate. There is also `backbone.component.js`, which shows a more complex component with inherited `events` and `className` attributes.
 
-aodin, 2013
+> aodin, 2013
