@@ -62,4 +62,19 @@ describe('Extended Components', function() {
     expect(child.count).toEqual(99);
   });
 
+  it('can overwrite the parent events', function() {
+    var OverwriteEventView = Component.extend({
+      events: {
+        'click': 'decrement',
+      },
+      decrement: function() {
+        this.count -= 1;
+      }
+    });
+    var overwrite = new OverwriteEventView();
+    expect(overwrite.count).toEqual(0);
+    overwrite.$el.trigger(jQuery.Event('click'));
+    expect(overwrite.count).toEqual(-1);
+  });
+
 });

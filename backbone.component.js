@@ -22,7 +22,7 @@
 
       // Add the additional events
       // TODO does not play well with functions that need an initialized var!
-      this.events = _.extend({}, _.result(this, 'events'), this.addEvents);
+      this.events = _.extend({}, this.addEvents, _.result(this, 'events'));
 
       // Initialize an attribute that will be overwritten
       this.count = 0;
